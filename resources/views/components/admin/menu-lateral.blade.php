@@ -2,7 +2,7 @@
     <nav>
         {{-- Logo --}}
         <div class="-mx-6 px-6 py-2 flex justify-center">
-            <a href="#">
+            <a href="/">
                 <img src=" {{ asset('images/car.png') }}" class="w-28" alt="Logo">
             </a>
         </div>
@@ -12,7 +12,7 @@
 
             {{-- Carros --}}
             <li>
-                <a href="#" class="px-2 py-3 flex items-center space-x-4 text-amber-500 group">
+                <a href="/carros" class="px-2 py-3 flex items-center space-x-4 text-amber-500 group">
 
                     {{-- Icon --}}
                     <span class="group-hover:text-amber-700">
