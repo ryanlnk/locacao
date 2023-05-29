@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Locadora de Veículos - Dashboard</title>
 
-    @livewireStyles()
+    @livewireStyles
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         </div>
     </main>
 
-    @livewireScripts()
+    @livewireScripts
 </body>
 
 </html>
