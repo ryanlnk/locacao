@@ -8,10 +8,24 @@ use Livewire\Component;
 class Carros extends Component
 {
     public $carros;
+    public $pesquisa = '';
+
+    public function filtrarDados()
+    {
+        if (empty($this->pesquisa)) {
+            $this->carros = Car::all();
+        } else {
+            $this->carros = Car::where('modelo', 'like', "%$this->pesquisa%")
+                ->orWhere('modelo', 'like', "%$this->pesquisa%")
+                ->orWhere('marca', 'like', "%$this->pesquisa%")
+                ->orWhere('cor', 'like', "%$this->pesquisa%")
+                ->get();
+        }
+    }
 
     public function render()
     {
-        $this->carros = Car::all();
+        $this->filtrarDados();
 
         return view('livewire.admin.carros.carros')->layout('components.admin.layouts.principal');
     }
