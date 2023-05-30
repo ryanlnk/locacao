@@ -1,9 +1,11 @@
 <section>
     <h1 class="text-2xl text-amber-500 font-medium">Carros</h1>
 
-    <div class="flex justify-end">
+    <div class="flex justify-end items-center">
+        <x-loading wire:loading />
+
         <input
-            class="mt-1 block w-1/4 rounded-md border-amber-300 shadown-sm focus:border-amber-300 focus:ring focus:ring-amber-500 focus:ring-opacity-50"
+            class="ml-4 mt-1 block w-1/4 rounded-md border-amber-300 shadown-sm focus:border-amber-300 focus:ring focus:ring-amber-500 focus:ring-opacity-50"
             type="text" wire:model="pesquisa">
     </div>
 

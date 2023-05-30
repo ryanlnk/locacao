@@ -8,6 +8,8 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <title>Locadora de Veículos - Dashboard</title>
 
+    <link rel="stylesheet" href="{{ asset('css/loading.css') }}">
+
     @livewireStyles
 </head>
 
