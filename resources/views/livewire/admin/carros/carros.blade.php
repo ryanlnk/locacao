@@ -9,7 +9,7 @@
             type="text" wire:model="pesquisa">
     </div>
 
-    <x-admin.botao-adicionar />
+    <x-admin.button-add href="/carroscriar" />
 
     <table class="bg-gradient-to-r from-amber-500 to-amber-700 mx-auto m-5 w-5/6 rounded-lg text-amber-50">
         <thead>
