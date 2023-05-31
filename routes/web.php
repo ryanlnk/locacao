@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Admin\Carros\Carros;
+use App\Http\Livewire\Admin\Carros\CarrosForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Carros::class);
 
 Route::get('/carros', Carros::class);
+
+Route::get('/carroscriar', CarrosForm::class);
