@@ -30,6 +30,8 @@ class CarrosForm extends Component
 
         $carros->save();
 
+        session()->flash('toast', 'Carro cadastrado com sucesso!');
+
         return redirect('/carros');
     }
 

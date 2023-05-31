@@ -9,6 +9,7 @@
     <title>Locadora de Veículos - Dashboard</title>
 
     <link rel="stylesheet" href="{{ asset('css/loading.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     @livewireStyles
 </head>
@@ -25,6 +26,25 @@
     </main>
 
     @livewireScripts
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    @if (session()->has('toast'))
+        <script>
+            Toastify({
+                text: "{{ session('toast') }}",
+                duration: 3000, //ms
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "#ccfbf1",
+                    borderTop: '4px solid #14b8a6',
+                    color: "#134e4a"
+                },
+                onClick: function() {} // Callback after click
+            }).showToast();
+        </script>
+    @endif
 </body>
 
 </html>
