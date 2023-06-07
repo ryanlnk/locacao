@@ -7,31 +7,37 @@ use Livewire\Component;
 
 class CarrosForm extends Component
 {
-    public $placa;
-    public $modelo;
-    public $marca;
-    public $ano;
-    public $descricao;
-    public $cor;
-    public $chassi;
-    public $diaria;
+    public Car $carro;
+
+    protected $rules = [
+        'carro.placa' => 'required|string|size:8|bail',
+        'carro.modelo' => 'required|string|max:50|min:2|bail',
+        'carro.marca' => 'required|string|max:50|min:2||bail',
+        'carro.ano' => 'required|digits:4|bail',
+        'carro.descricao' => 'string|nullable|bail',
+        'carro.cor' => 'required|string|max:20|min:2||bail',
+        'carro.chassi' => 'required|string|max:17|min:2||bail',
+        'carro.diaria' => 'required|decimal:0,2|bail',
+    ];
+
+    protected $validationAttributes = [
+        'diaria' => 'diária',
+        'descricao' => 'descrição'
+    ];
+
+    public function updated($nomePropriedade){
+        $this->validateOnly($nomePropriedade);
+    }
+
+    public function mount(){
+        $this->carro = new Car();
+    }
 
     public function salvar()
     {
-        $carros = new Car;
-        $carros->placa = $this->placa;
-        $carros->modelo = $this->modelo;
-        $carros->marca = $this->marca;
-        $carros->ano = $this->ano;
-        $carros->descricao = $this->descricao;
-        $carros->cor = $this->cor;
-        $carros->chassi = $this->chassi;
-        $carros->diaria = $this->diaria;
-
-        $carros->save();
-
+        $this->validate();
+        $this->carro->save();
         session()->flash('toast', 'Carro cadastrado com sucesso!');
-
         return redirect('/carros');
     }
 
