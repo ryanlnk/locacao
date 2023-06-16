@@ -26,6 +26,7 @@ class Carros extends Component
 
     public function deletar($id) {
         Car::destroy($id);
+        $this->emit('mostrarToast', 'Carro deletado com sucesso!');
     }
 
     public function render()
