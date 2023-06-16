@@ -19,6 +19,7 @@
                 <th class="px-4 py-3">Marca</th>
                 <th class="px-4 py-3">Cor</th>
                 <th class="px-4 py-3">Diária</th>
+                <th class="px-4 py-3"></th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,9 @@
                     <td class="px-4 py-3">{{ $carro->marca }}</td>
                     <td class="px-4 py-3">{{ $carro->cor }}</td>
                     <td class="px-4 py-3">{{ $carro->diaria }}</td>
+                    <td class="px-4 py-3">
+                        <x-admin.button-delete wire:click="$emit('confirmarDeletar', '{{$carro->id}}')" />
+                    </td>
                 </tr>
             @empty
                 <tr class="text-center bg-amber-600 border-b border-amber-300 hover:bg-amber-500">

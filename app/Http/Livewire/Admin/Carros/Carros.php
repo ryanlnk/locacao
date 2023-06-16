@@ -9,6 +9,7 @@ class Carros extends Component
 {
     public $carros;
     public $pesquisa = '';
+    protected $listeners = ['deletar'];
 
     public function filtrarDados()
     {
@@ -21,6 +22,10 @@ class Carros extends Component
                 ->orWhere('cor', 'like', "%$this->pesquisa%")
                 ->get();
         }
+    }
+
+    public function deletar($id) {
+        Car::destroy($id);
     }
 
     public function render()

@@ -45,6 +45,14 @@
             }).showToast();
         </script>
     @endif
+
+    <script>
+        Livewire.on('confirmarDeletar', (id) => {
+            if(confirm('Desejar deletar?')) {
+                Livewire.emit('deletar', id);
+            }
+        })
+    </script>
 </body>
 
 </html>
