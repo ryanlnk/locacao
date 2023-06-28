@@ -29,8 +29,8 @@ class CarrosForm extends Component
         $this->validateOnly($nomePropriedade);
     }
 
-    public function mount(){
-        $this->carro = new Car();
+    public function mount(Car $carro){
+        $this->carro = $carro;
     }
 
     public function salvar()

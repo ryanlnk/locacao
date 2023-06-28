@@ -20,3 +20,5 @@ Route::get('/', Carros::class);
 Route::get('/carros', Carros::class);
 
 Route::get('/carroscriar', CarrosForm::class);
+
+Route::get('/carros/{carro}/editar', CarrosForm::class);

@@ -31,6 +31,8 @@
                     <td class="px-4 py-3">{{ $carro->cor }}</td>
                     <td class="px-4 py-3">{{ $carro->diaria }}</td>
                     <td class="px-4 py-3">
+                        <x-admin.button-edit href="/carros/{{$carro->id}}/editar"/>
+
                         <x-admin.button-delete wire:click="$emit('confirmarDeletar', '{{$carro->id}}')" />
                     </td>
                 </tr>
