@@ -15,6 +15,7 @@
 
     <main class="h-screen flex flex-col justify-center items-center bg-gray-50">
         {{-- Logo --}}
+        <x-shared.logo />
 
         {{-- Card --}}
         <div class="w-full max-w-md px-6 py-4 bg-white shadow-md rounded-md">

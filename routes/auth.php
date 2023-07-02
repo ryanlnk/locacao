@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
 
     // Rotas criadas
-    Route::get('/login', Login::class);
+    Route::get('/login', Login::class)->name('login');
     // Fim das rodas criadas
 
     Route::get('register', [RegisteredUserController::class, 'create'])

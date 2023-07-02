@@ -15,13 +15,7 @@ use App\Http\Livewire\Admin\Carros\CarrosForm;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/', Carros::class);
+Route::get('/', Carros::class)->middleware('auth');
 
 Route::get('/carros', Carros::class);
 
